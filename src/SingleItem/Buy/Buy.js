@@ -1,9 +1,9 @@
 import React from 'react';
-
+import './Buy.css'
 const buy = (props) => {
     return (
         <div>
-            <button onClick={props.clicked}>Order now</button>
+            <button className="buy-btn" onClick={props.clicked}>Order now</button>
         </div>
     );
 };

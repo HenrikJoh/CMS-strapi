@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import config from '../config';
 
+import './Order.css'
+
 const url = config.orders;
 export default class Order extends Component {
     state = {
@@ -46,35 +48,38 @@ export default class Order extends Component {
         const orders = this.state.order.map((t, i) => {
             sum = sum + t.price
             return (
-                <div key={i}>
-                    <p>{t.name}</p>
-                    <p>Price: {t.price}</p>
-                    <p>Stock: {t.stock}</p>
+                <div className="order" key={i}>
+                    <p><span>Product: </span>{t.name}</p>
+                    <p><span>Price: </span> {t.price}$</p>
+                    <p><span>Stock: </span> {t.stock}</p>
                 </div>
             )
         })
 
         return (
-            <div>
+            <div className="order-container">
                 <div>
-                    {orders}
-                    <hr />
-                    <p><strong>Total price:</strong> {sum}</p>
+                    <div className="orders">
+                        {orders}
+                    </div>
+                    <div className="total">
+                        <p><strong>Total price:</strong> {sum}$</p>
+                    </div>
                 </div>
                 <div>
                     <form onSubmit={this.submitHandler}>
                         <label htmlFor="name">Name</label>
-                        <input name="name" type="text" value={this.state.name} onChange={(event) => this.onChangeHandler(event)} />
+                        <input className="order-input" name="name" type="text" value={this.state.name} onChange={(event) => this.onChangeHandler(event)} />
                         <label htmlFor="adress">Adress</label>
-                        <input name="adress" type="text" value={this.state.adress} onChange={(event) => this.onChangeHandler(event)} />
+                        <input className="order-input" name="adress" type="text" value={this.state.adress} onChange={(event) => this.onChangeHandler(event)} />
                         <label htmlFor="email">Email</label>
-                        <input name="email" type="text" value={this.state.email} onChange={(event) => this.onChangeHandler(event)} />
-                        <input type="submit" value="Submit" />
+                        <input className="order-input" name="email" type="text" value={this.state.email} onChange={(event) => this.onChangeHandler(event)} />
+                        <input id="order-btn" type="submit" value="Submit" />
                     </form>
 
 
                 </div>
-            </div>
+            </div >
         );
     }
 }

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import config from '../config';
 import Product from './Product/Product';
 import Filter from '../Filter/Filter';
+import './ProductList.css';
 
 // strapi hello 1234
 const url = config.Url;
@@ -44,9 +45,13 @@ export default class ProductList extends Component {
         });
 
         return (
-            <div className="main">
-                <Filter toggle={(event) => this.fetchProducts(event)} />
-                {product}
+            <div>
+                <div className="filter">
+                    <Filter toggle={(event) => this.fetchProducts(event)} />
+                </div>
+                <div className="main">
+                    {product}
+                </div>
             </div>
         )
     }

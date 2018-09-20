@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './Comment.css';
+
 export default class Comment extends Component {
     state = {
         name: '',
@@ -28,17 +30,21 @@ export default class Comment extends Component {
 
     render() {
         return (
-            <div>
-                <input name="name" value={this.state.name} onChange={(event) => this.changeHandler(event)} placeholder="Name" />
-                <textarea name="comment" rows="10" cols="50" value={this.state.comment} onChange={(event) => this.changeHandler(event)} placeholder="Your comment" />
-                <select name="rating" onChange={(event) => this.changeHandler(event)} >
+            <div className="comment-container">
+                <h3>Review</h3>
+                <label htmlFor="name">Name</label>
+                <input name="name" id="name-input" value={this.state.name} onChange={(event) => this.changeHandler(event)} placeholder="Name" />
+                <label htmlFor="comment">Comment</label>
+                <textarea id="area-input" name="comment" value={this.state.comment} onChange={(event) => this.changeHandler(event)} placeholder="Your comment" />
+                <label htmlFor="rating">Rating</label>
+                <select id="option-input" name="rating" onChange={(event) => this.changeHandler(event)} >
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-                <button onClick={this.sub.bind(this)}>Submit</button>
+                <button id="comment-btn" onClick={this.sub.bind(this)}>Submit</button>
             </div>
 
         );

@@ -1,0 +1,9 @@
+.buy-btn {
+    background-color: #28C342;
+    border: none;
+    padding: 20px;
+    width: 150px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}

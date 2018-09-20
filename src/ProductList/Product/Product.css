@@ -1,3 +1,25 @@
 .product img {
     width: 200px;
 }
+
+.product {
+    text-align: center;
+    width: 300px;
+    flex-wrap: wrap;
+    padding: 30px;
+    margin: 10px;
+    box-shadow: 2px 2px 2px #ccc;
+    
+}
+
+.product a {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: #28C342;
+    padding: 10px 20px;
+}
+
+#last {
+    margin-bottom: 30px;
+}

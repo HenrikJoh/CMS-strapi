@@ -4,6 +4,7 @@ import config from '../config';
 import Review from './Review/Review';
 import Comment from './Comment/Comment';
 import Buy from './Buy/Buy';
+import './SingleItem.css'
 
 const url = config.Url
 
@@ -16,12 +17,10 @@ export default class SingleItem extends Component {
 
     componentDidMount() {
         const id = this.props.match.params.id;
-        console.log(this.props.match.params.id);
         storage = JSON.parse(localStorage.getItem("session")) || []
         fetch(url + id)
             .then(res => res.json())
             .then((data) => {
-                console.log(data);
                 this.setState({ item: data });
             });
         this.fetchComment();
@@ -70,15 +69,19 @@ export default class SingleItem extends Component {
             return null;
         }
         return (
-            <div>
+            <div className="product-container">
                 <div>
-                    <img src={config.imageUrl + items.image.url} alt={items.name} />
-                    <p>{items.name}</p>
+                    <div className="product-image">
+                        <img src={config.imageUrl + items.image.url} alt={items.name} />
+                    </div>
+                    <h3>{items.name}</h3>
                     <p>{items.description}</p>
-                    <p>{items.price}$</p>
-                    <p>In stock: {items.stock}</p>
+                    <h4>Price: {items.price}$</h4>
+                    <h4>In stock: {items.stock}</h4>
                 </div>
-                <Buy clicked={this.cart} />
+                <div className="buy-button">
+                    <Buy clicked={this.cart} />
+                </div>
                 <Comment
                     item={items}
                     clicked={this.submitHandler}

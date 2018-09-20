@@ -1,0 +1,15 @@
+.main {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+}
+

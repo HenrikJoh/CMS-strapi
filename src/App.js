@@ -11,13 +11,15 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div>
-          <ul>
+        <div className="nav">
+          <ul className="navbar">
             <li><NavLink to="/">Home</NavLink></li>
             <li> <NavLink to="/Order">Order</NavLink></li>
+            <Cart />
           </ul>
-          <Cart />
+
         </div>
+
         <Route path="/Order" exact component={Order} />
         <Route path="/" exact component={ProductList} />
         <Route path="/products/:id" component={SingleItem} />
