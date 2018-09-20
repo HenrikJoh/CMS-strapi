@@ -1,12 +1,12 @@
 module.exports = {
-    imageUrl: "http://localhost:1337",
+    imageUrl: "https://whispering-reaches-43624.herokuapp.com/",
     priceSort: "?_sort=price:asc",
     nameSort: "?_sort=name:asc",
     categorySort: "?_sort=category:asc",
     stockSort: "?_sort=stock:asc",
-    Url: 'http://localhost:1337/products/',
-    review: 'http://localhost:1337/review/',
-    FilterUrl: 'http://localhost:1337/products/?category=',
-    orders: 'http://localhost:1337/order'
+    Url: 'https://whispering-reaches-43624.herokuapp.com/products/',
+    review: 'https://whispering-reaches-43624.herokuapp.com/review/',
+    FilterUrl: 'https://whispering-reaches-43624.herokuapp.com/products/?category=',
+    orders: 'https://whispering-reaches-43624.herokuapp.com/order'
 }
 
